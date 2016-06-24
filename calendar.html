@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<script src="jquery.min.js"></script>
+<link rel="stylesheet" href="jquery-ui.css">
+<link href="calendar.css" rel="stylesheet" type="text/css">
+<script src="jquery-ui.min.js"></script>
+<script src="calendar.js"></script>
+
+
+<title>Calendar Assessment</title>
+</head>
+
+<body>
+
+<div>
+<h1>Calendar Assessment</h1>
+<p>Use this form to sumbit a start date, number of days to display, and country code to return a calendar or calendars containing
+ that range of dates and the respective holidays which reside within them.</p>
+</div>
+
+<div>
+<ul class="ui-widget subform">
+<li>Please Enter the Following:</li>
+<li>Start Date: <br /><input name="Start" type="text" value="" /></li>
+<li>Number of Days: <br /><input name="Range" type="text" value="" /></li>
+<li>Country: <br /><input name="Country" type="text" value="" /></li>
+<li><button name="Submit" onclick=myRequest()>Submit</button></li>
+</ul></div>
+<div id="myCal"><p id="cal"></p></div>
+</body>
+
+</html>
