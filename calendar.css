@@ -4,3 +4,6 @@
 .subform{
 	list-style:none;
 }
+a.ui-datepicker-prev.ui-corner-all, a.ui-datepicker-next.ui-corner-all {
+    display: none;
+}
