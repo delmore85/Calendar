@@ -11,5 +11,5 @@
 }
 
 $(function(){
-    $('#startDate').datepicker();
+    $('#startDate').datepicker({ changeYear: true, changeMonth: true });
 });
