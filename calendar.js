@@ -9,3 +9,7 @@
   request.open("GET", uri , true);
   request.send();
 }
+
+$(function(){
+    $('#startDate').datepicker();
+});
