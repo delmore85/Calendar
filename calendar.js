@@ -1,4 +1,8 @@
-﻿function myRequest() {
+﻿$(function(){
+    $('#startDateSelect').datepicker({ changeYear: true, changeMonth: true });
+});
+
+function myRequest() {
   var request = new XMLHttpRequest();
   var dateRequest = encodeURIComponent(document.getElementById("startDateSelect").value)
   var daysRequest = encodeURIComponent(document.getElementById("daysSelect").value)
@@ -11,8 +15,12 @@
   };
   request.open("GET", url , true);
   request.send();
+    
+  $('#myCal').datepicker({
+		inline: true,
+		firstDay: 0,
+		showOtherMonths: false,
+		dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+	});
 }
 
-$(function(){
-    $('#startDate').datepicker({ changeYear: true, changeMonth: true });
-});
