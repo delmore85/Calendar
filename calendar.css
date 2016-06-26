@@ -4,16 +4,16 @@
 .subform{
 	list-style:none;
 }
-a.ui-datepicker-prev.ui-corner-all, a.ui-datepicker-next.ui-corner-all {
+.ui-datepicker-inline a.ui-datepicker-prev.ui-corner-all, .ui-datepicker-inline a.ui-datepicker-next.ui-corner-all {
     display: none;
 }
-.ui-widget-content .ui-state-default{
+.ui-datepicker-inline .ui-datepicker-calendar .ui-state-default{
 	background-color:darkseagreen;
 	background-image: none !important;
 }
-.ui-datepicker-week-end .ui-state-default {
+.ui-datepicker-inline .ui-datepicker-calendar .ui-datepicker-week-end .ui-state-default {
     background-color: yellow;
 }
-.ui-datepicker-unselectable{
+.ui-datepicker-inline .ui-datepicker-calendar .ui-datepicker-unselectable{
 	background-color:darkgray;
 }
