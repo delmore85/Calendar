@@ -17,3 +17,9 @@
 .ui-datepicker-inline .ui-datepicker-calendar .ui-datepicker-unselectable{
 	background-color:darkgray;
 }
+.ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all.ui-datepicker-multi {
+    border: none !important;
+}
+.ui-datepicker-inline .ui-datepicker-group {
+    width: 75% !important;
+}

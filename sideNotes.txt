@@ -1,0 +1,124 @@
+  if ($('.ui-datepicker-inline .ui-datepicker-calendar a.ui-state-default:contains('+daySplit+')')){
+		$(.ui-datepicker-inline .ui-datepicker-calendar tbody tr').addClass('ui-datepicker-unselectable ui-state-disabled');
+		complete=true;
+		$('tr').addClass('test');
+	  }
+
+---------------------------------------------------
+  for (i=1; i<6; i++){
+  	if ($('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-of-type('+i+') td:not('+daySplit+')')){
+  	$('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-of-type('+i+')').addClass('ui-datepicker-unselectable ui-state-disabled');
+  		}
+	} 	
+---------------------------------------------------
+    (switchDay == true){
+    case 0:
+    	switchDay = $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+') td:nth-child('+j+') a:contains('+daySplit+')');
+    	break;
+    case 1:
+    	switchDay = $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+') td:nth-child(2) a:contains('+daySplit+')');
+    	break;
+    case 2:
+    	switchDay = $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+') td:nth-child(3) a:contains('+daySplit+')');
+    	break;
+    case 3:
+    	switchDay = $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+') td:nth-child(4) a:contains('+daySplit+')');
+    	break;
+    case 4:
+    	switchDay = $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+') td:nth-child(5) a:contains('+daySplit+')');
+    	break;
+    case 5:
+    	switchDay = $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+') td:nth-child(6) a:contains('+daySplit+')');
+    	break;
+    case 6:
+    	switchDay = $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+') td:nth-child(7) a:contains('+daySplit+')');
+    	break;
+    default:
+    	$('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+i+')').css('display','none');
+    	break;
+    	}
+----------------------------------------------------------------
+
+  for (w=1; w<6; w++){
+   	for(d=1; d<8; d++){
+    	if(('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+w+') td:nth-child('+d+') a').innerHTML.indexOf(daySplit) !== -1){
+    		switchDay = true;
+    		console.log(test);
+    		console.log(switchDay);
+    		$('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+w+') td:nth-child('+d+') a').addClass('test'+d);
+    	}
+   	}
+   	if (switchDay = false){
+   		$('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+w+')').css('display','none');
+   	}
+  } 
+-----------------------------------------------------------------
+  for (w=1; w<6; w++){
+   	for(d=1; d<8; d++){
+    	if($('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+w+') td:nth-child('+d+') a:contains('+daySplit+')')){
+    		switchDay = true;
+    		var test =$('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+w+') td:nth-child('+d+') a:contains('+daySplit+')');
+    		console.log(test);
+    		console.log(switchDay);
+    		$('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+w+') td:nth-child('+d+') a').addClass('test'+d);
+    	}
+   	}
+   	if (switchDay = false){
+   		$('.ui-datepicker-inline .ui-datepicker-calendar tbody tr:nth-child('+w+')').css('display','none');
+   	}
+  } 
+------------------------------------------------------------------
+  var week1 = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var week2 = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var week3 = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var week4 = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var week5 = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var dateMatrix = [
+  week1,
+  week2,
+  week3,
+  week4,
+  week5
+  ]
+  console.log(dateMatrix[1][4]);
+-------------------------------------------------------------------
+find selected date in month
+if date before selected date set class .ui-datepicker-unselectable
+hide week before date if date not found in it
+find the max of the current calendar
+if number of days remaining > 0 create new calendar
+set selected date to 1 of the new month and continue count
+if month 12 and create new calendar, add 1 to the year and set month to 1
+
+var complete = false;
+while complete= false {
+	find selected date in month
+        find maxdays in month
+	daysleft = selectedNumDays
+	case week:
+		day 1 not selected day
+		day 2 not selected day
+		day 3 not selected day
+		day 4 not selected day
+		day 5 not selected day
+		day 6 not selected day
+		day 7 not selected day
+		default set week display:none
+	for daysinmonth {
+		if day < selectedday{
+			set class .ui-datepicker-unselectable
+			}
+		//if holiday logic
+		if daysinmonth's i = maxdays && daysleft != 0{
+			create new calendar and repeat
+			}
+		else{
+			complete = true;
+			}
+		}
+i=0
+i++ week1[]:tr[ nthchild 1-7]
+i++ week2[]:tr[ nthchild 1-7]
+i++ week3[]:tr[ nthchild 1-7]
+i++ week4[]:tr[ nthchild 1-7]
+i++ week5[]:tr[ nthchild 1-7]

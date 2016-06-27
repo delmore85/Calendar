@@ -10,12 +10,21 @@ function myRequest() {
   var countryRequest = encodeURIComponent(document.getElementById("countrySelect").value);
   var dateSplit = calDate.split('/');
   var monthSplit = dateSplit[0];
+  var daySplit = dateSplit[1];
   var yearSplit = dateSplit[2];
-  var url = "http://holidayapi.com/v1/holidays?country="+countryRequest+"&year="+yearSplit+"&month="+monthSplit;
+  var url = 'http://holidayapi.com/v1/holidays?country='+countryRequest+'&year='+yearSplit+'&month='+monthSplit;
+  var weeks = daySplit/7+daysRequest/7;
   
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
-      document.getElementById("cal").innerHTML = request.responseText + "<br />" + calDate + "<br />" + monthSplit + "<br />" + yearSplit;
+      console.log(
+      'Request Text:' + request.responseText + '\n' +
+      'Selected Date:' + calDate + '\n' +
+      'Selected Month:' + monthSplit + '\n' +
+      'Selected Year:' + yearSplit + '\n' +
+      'Selected Day:' + daySplit + '\n' +
+      'Days Requested:' + daysRequest + '\n' +
+      'Days to Weeks:' + weeks);
     }
   };
   
@@ -26,9 +35,11 @@ function myRequest() {
 		inline: true,
 		firstDay: 0,
 		showOtherMonths: false,
-		dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+		dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+		numberOfMonths: [ weeks/5,1 ]
 	});
-	
-  $('#myCal').datepicker('setDate', calDate);
-}
 
+  $('#myCal').datepicker('setDate', calDate);
+  $('.ui-datepicker-inline .ui-datepicker-calendar tbody tr td.ui-datepicker-today a.ui-state-highlight').removeClass('ui-state-highlight');
+
+}
